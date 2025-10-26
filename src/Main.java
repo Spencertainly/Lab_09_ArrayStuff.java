@@ -13,7 +13,7 @@ public class Main {
         }
         for (int i = 0; i < dataPoints.length; i++) {
             System.out.print(dataPoints[i]);
-            if (i < dataPoints.length - 1) ;
+            if (i < dataPoints.length - 1)
             {
                 System.out.print(" | ");
             }
@@ -31,7 +31,7 @@ public class Main {
         System.out.println("The average of the random array dataPoints is: " + average);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print ("Enter a value between 1 and 100 to search for in the dataPoints array: ");
+        System.out.print("Enter a value between 1 and 100 to count the array: ");
         int userValue = scanner.nextInt();
 
         int count = 0;
@@ -44,6 +44,27 @@ public class Main {
         }
         //Results
         System.out.println("Your value " + userValue + " was found " + count + " time(s) in the dataPoint array!");
-        scanner.close();
+
+        System.out.print("Enter a value between 1 and 100 to find the find its first position in the dataPoints array: ");
+        int userValueFind = scanner.nextInt();
+        int position = -1;
+        for (int i = 0; i < dataPoints.length; i++)
+        {
+            if (dataPoints[i] == userValueFind)
+            {
+                position = i;
+                break;
+            }
+        }
+        if (position != -1)
+        {
+            System.out.println("Your value " + userValueFind + " was found at array index " + position);
+        }
+        else
+        {
+            System.out.println("Your value " + userValueFind + " was not found in the array.");
+        }
+            scanner.close();
+
     }
 }
